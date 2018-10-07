@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>WELCOME</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	{% load static %}
+	<!--
+	<img src="{% static "tables/ford.jpg" %}" alt="My image">
+	-->
+	<style>
+		body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #3498db;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+ 
+  color: white;
+}
+
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+		body{
+			background-image: url("/static/ford7.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		th{
+    			color: white;
+		}
+		th,td{
+			padding: 10px;
+			text-align: left;
+		}
+		tr{
+			color: white;
+		}
+		.jumbotron{
+			height: 200px;
+			overflow-x: scroll;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="{% static 'tables/style.css'%}">
+</head>
+<body>
+		<!--You can login here
+		<button class="btn btn-info outline",type = button,name = button>login</button>
+		-->
+	<div class="topnav">
+  	<input type="text" placeholder="Search....">
+  	<a href="https://www.ford.com/">Official site</a>
+  	<a href="https://www.me.ford.com/en/afg/ownersite/parts-parts-distribution-center/">Centres</a>
+  	<a href="https://www.google.co.in/search?rlz=1C1GIWA_enIN713IN713&q=ford+dealers+in+us&npsic=0&rflfq=1&rlha=0&rllag=37480592,-84263387,932468&tbm=lcl&ved=2ahUKEwjRuOzhpujdAhXLP48KHem8A1IQtgN6BAgEEAQ&tbs=lrf:!2m1!1e3!3sIAE,lf:1,lf_ui:4&rldoc=1#rlfi=hd:;si:;mv:!3m12!1m3!1d9056421.926007738!2d-86.8207846!3d36.58007464999999!2m3!1f0!2f0!3f0!3m2!1i321!2i265!4f13.1;tbs:lrf:!2m1!1e3!3sIAE,lf:1,lf_ui:4"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Maps</a>
+  	<a class="active" href="{% url 'home' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+	</div>
+
+	<div style="background: transparent !important;background-color: #6c5ce7",class="jumbotron">
+		<div class="container"> 
+		{% block content %}
+		{% endblock %}
+		</div>
+		<h2 style="color: white">Click on the below buttons to view tables</h2>
+		<a href="{% url 'products' %}" class="btn btn-warning" style="text-align: center;margin-left: 500px;margin-bottom: 30px; margin-top: 30px"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> products</a>
+		<a href="{% url 'Distribution_centres' %}" class="btn btn-default" style="text-align: center;margin-left: 100px;margin-bottom: 30px;margin-top: 30px"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Distribution_centres</a>
+		<p>
+			<a href="{% url 'Dealer_address' %}" class="btn btn-success" style="text-align: center;margin-left: 305px;margin-bottom: 30px;margin-top: 30px"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> DL_Address</a>
+			<a href="{% url 'shipment' %}" class="btn btn-danger" style="text-align: center;margin-left: 200px;margin-bottom: 30px;margin-top: 30px"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> shipment</a>
+			<a href="{% url 'Dealers' %}" class="btn btn-info" style="text-align: center;margin-left: 200px;margin-bottom: 30px;margin-top: 30px"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Dealers</a>
+		</p>
+		<p>
+			<a href="{% url 'Distribution_centre_Address' %}" class="btn btn-primary" style="text-align: center;margin-left: 500px;margin-bottom: 30px;margin-top: 30px"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> DC_Address</a>
+			<a href="{% url 'DC_Location' %}" class="btn btn-warning" style="text-align: center;margin-left: 100px;margin-bottom: 30px;margin-top: 30px"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> DC_Location</a>
+		</p>
+	</div>
+</body>
+</html>

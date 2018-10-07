@@ -1,0 +1,24 @@
+{% extends 'tables\login.html' %}
+<html>
+<head>
+	<title>Distribution_centres_Location</title>
+</head>
+{% block content %}
+<body>
+	<h1 style="color: white;font-family: courier">Distribution Centres Location</h1>
+	<table width = "100%" border = "1">
+		<tr style="background-color: gray">
+			<th>DC_ID</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+		{% for items in query_result %}
+		<tr>
+			<td>{{ items.DC_ID }}</td>
+			<td>{{ items.Xcoordinate }}</td>
+			<td>{{ items.Ycoordinate }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,27 @@
+{% extends 'tables\login.html' %}
+<html>
+<head>
+	<title>Products</title>
+</head>
+{% block content %}
+<body>
+	<h1 style="color: white;font-family: courier">Products</h1>
+	<table width = "100%" border = "1">
+		<tr style="background-color: gray">
+			<th>P_ID</th>
+			<th>NAME</th>
+			<th><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> PRICE(in dollars)</th>
+			<th>DC_ID</th>
+		</tr>
+		{% for items in query_result %}
+		<tr>
+			<td>{{ items.P_ID }}</td>
+			<td>{{ items.NAME }}</td>
+			<td>{{ items.value }}</td>
+			<td>{{ items.DC_ID }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+{% endblock %}
+</html>

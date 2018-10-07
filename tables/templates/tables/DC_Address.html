@@ -1,0 +1,27 @@
+{% extends 'tables\login.html' %}
+<html>
+<head>
+	<title>Distribution_centres_Address</title>
+</head>
+{% block content %}
+<body>
+	<h1 style="color: white;font-family: courier">Distribution Centres Address</h1>
+	<table width = "100%" border = "1">
+		<tr style="background-color: gray">
+			<th>zipcode</th>
+			<th>city</th>
+			<th>state</th>
+			<th>DC_ID</th>
+		</tr>
+		{% for items in query_result %}
+		<tr>
+			<td>{{ items.zipcode }}</td>
+			<td>{{ items.city }}</td>
+			<td>{{ items.state }}</td>
+			<td>{{ items.DC_ID }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+{% endblock %}
+</html>

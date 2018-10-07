@@ -1,0 +1,23 @@
+{% extends 'tables\login.html' %}
+<html>
+<head>
+	<title>Distribution_centres</title>
+</head>
+{% block content %}
+<body>
+	<h1 style="color: white;font-family: courier">Distribution Centres</h1>
+	<table width = "100%">
+		<tr style="background-color:gray;">
+			<th>DC_ID</th>
+			<th><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contact</th>
+		</tr>
+		{% for items in query_result %}
+		<tr>
+			<td>{{ items.DC_ID }}</td>
+			<td>{{ items.Contact }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+{% endblock %}
+</html>

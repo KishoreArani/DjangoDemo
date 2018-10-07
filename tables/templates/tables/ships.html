@@ -1,0 +1,31 @@
+{% extends 'tables\login.html' %}
+<html>
+<head>
+	<title>Shipment</title>
+</head>
+{% block content %}
+<body>
+	<h1 style="color: white;font-family: courier">Shipments</h1>
+	<table width = "100%" border = "1">
+		<tr style="background-color: gray">
+			<th>DC_ID</th>
+			<th>P_ID</th>
+			<th>DL_ID</th>
+			<th>Date</th>
+			<th>Distance</th>
+			<th>Quantity</th>
+		</tr>
+		{% for items in query_result %}
+		<tr>
+			<td>{{ items.DC_ID }}</td>
+			<td>{{ items.P_ID }}</td>
+			<td>{{ items.DL_ID }}</td>
+			<td>{{ items.Date }}</td>
+			<td>{{ items.Distance }}</td>
+			<td>{{ items.Quantity }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+{% endblock %}
+</html>
